@@ -17,7 +17,7 @@ function App() {
   // If we are on a separate page (like /projects), we might not want the snap scrolling layout
   if (location.pathname === '/projects') {
     return (
-      <div className="relative min-h-screen bg-[#050505] text-white overflow-y-auto">
+      <div className="relative h-screen bg-[#050505] text-white overflow-y-auto">
         <Navbar />
         <Routes>
           <Route path="/projects" element={<AllProjects />} />

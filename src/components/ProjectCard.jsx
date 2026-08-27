@@ -4,7 +4,7 @@ import { Github, Globe, ArrowUpRight } from 'lucide-react';
 const ProjectCard = ({ project }) => {
     return (
         <motion.div
-            className="relative w-full h-full min-h-[220px] glass-card rounded-2xl overflow-hidden group cursor-pointer border border-white/5"
+            className="relative w-full h-full min-h-[320px] glass-card rounded-2xl overflow-hidden group cursor-pointer border border-white/5"
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >

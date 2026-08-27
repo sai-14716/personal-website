@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import { projectsData } from '../data/projectsData';
 
-const categories = ["All", "Systems", "Quant/Finance", "Machine Learning", "Web"];
+const majorSkills = ["All", "Python", "C", "C++", "Go", "TensorFlow", "Django"];
 
 const AllProjects = () => {
-    const [activeCategory, setActiveCategory] = useState("All");
+    const [activeSkill, setActiveSkill] = useState("All");
     const navigate = useNavigate();
 
-    const filteredProjects = activeCategory === "All" 
+    const filteredProjects = activeSkill === "All" 
         ? projectsData 
-        : projectsData.filter(p => p.category === activeCategory);
+        : projectsData.filter(p => p.tags && p.tags.some(tag => tag.toLowerCase() === activeSkill.toLowerCase()));
 
     return (
         <div className="min-h-screen w-full flex flex-col justify-start bg-[#050505] pt-32 pb-20 relative">
@@ -39,17 +39,17 @@ const AllProjects = () => {
                     
                     {/* Category Filter */}
                     <div className="flex flex-wrap gap-2 glass p-2 rounded-2xl">
-                        {categories.map(cat => (
+                        {majorSkills.map(skill => (
                             <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
+                                key={skill}
+                                onClick={() => setActiveSkill(skill)}
                                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                                    activeCategory === cat 
+                                    activeSkill === skill 
                                     ? 'bg-white/10 text-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.2)]' 
                                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                                 }`}
                             >
-                                {cat}
+                                {skill}
                             </button>
                         ))}
                     </div>
@@ -60,7 +60,7 @@ const AllProjects = () => {
             <div className="w-full max-w-7xl mx-auto px-6 z-10">
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={activeCategory}
+                        key={activeSkill}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
