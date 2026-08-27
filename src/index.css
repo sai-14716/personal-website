@@ -9,7 +9,7 @@
 
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  background-color: #050505; /* Deeper black for modern feel */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,7 +28,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
-  /* Prevent body scroll, handle in main */
 }
 
 /* Custom utilities */
@@ -39,4 +38,45 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Sleek & Modern Glassmorphism */
+.glass {
+  background: rgba(20, 20, 22, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(30, 30, 35, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(40, 40, 48, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Neon Accents */
+.neon-text-cyan {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.neon-text-purple {
+  color: #b026ff;
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+.neon-border-hover:hover {
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
 }

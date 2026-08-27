@@ -17,24 +17,24 @@ function App() {
       <Navbar />
       <DotNavigation activeSection={activeSection} />
 
-      <main className="h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-black text-white">
-        <Section id="home" onActive={setActiveSection} className="bg-transparent">
+      <main className="h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-[#050505] text-white">
+        <Section id="home" onActive={setActiveSection} className="bg-black">
           <Home />
         </Section>
 
-        <Section id="about" onActive={setActiveSection} className="bg-zinc-900">
+        <Section id="about" onActive={setActiveSection} className="bg-[#050505]">
           <About />
         </Section>
 
-        <Section id="projects" onActive={setActiveSection} className="bg-zinc-800">
+        <Section id="projects" onActive={setActiveSection} className="bg-[#050505]">
           <Projects />
         </Section>
 
-        <Section id="skills" onActive={setActiveSection} className="bg-zinc-700">
+        <Section id="skills" onActive={setActiveSection} className="bg-[#050505]">
           <Skills />
         </Section>
 
-        <Section id="contact" onActive={setActiveSection} className="bg-zinc-600">
+        <Section id="contact" onActive={setActiveSection} className="bg-[#050505]">
           <Contact />
         </Section>
       </main>
