@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DotNavigation from './components/DotNavigation';
 import Section from './components/Section';
@@ -8,10 +8,25 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
+import AllProjects from './pages/AllProjects';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
+  // If we are on a separate page (like /projects), we might not want the snap scrolling layout
+  if (location.pathname === '/projects') {
+    return (
+      <div className="relative min-h-screen bg-[#050505] text-white overflow-y-auto">
+        <Navbar />
+        <Routes>
+          <Route path="/projects" element={<AllProjects />} />
+        </Routes>
+      </div>
+    );
+  }
+
+  // Main landing page with snap scrolling
   return (
     <div className="relative">
       <Navbar />

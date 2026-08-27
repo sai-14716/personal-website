@@ -1,11 +1,25 @@
-
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleNavigation = (id) => {
+        if (location.pathname !== '/') {
+            // If not on home page, navigate to home and then scroll
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 
@@ -18,17 +32,17 @@ const Navbar = () => {
         >
             <ul className="flex space-x-12 text-lg font-medium tracking-wide">
                 <li>
-                    <button onClick={() => scrollToSection('about')} className="hover:text-gray-300 transition-colors uppercase">
+                    <button onClick={() => handleNavigation('about')} className="hover:text-gray-300 transition-colors uppercase">
                         About
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => scrollToSection('projects')} className="hover:text-gray-300 transition-colors uppercase">
+                    <button onClick={() => handleNavigation('projects')} className="hover:text-gray-300 transition-colors uppercase">
                         Projects
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => scrollToSection('contact')} className="hover:text-gray-300 transition-colors uppercase">
+                    <button onClick={() => handleNavigation('contact')} className="hover:text-gray-300 transition-colors uppercase">
                         Contact Me
                     </button>
                 </li>

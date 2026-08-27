@@ -78,7 +78,7 @@ const About = () => {
                         <img
                             src="/images/about-avatar.jpeg"
                             alt="Avatar"
-                            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 scale-100 group-hover:scale-105"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-100 group-hover:scale-105"
                         />
 
                         {/* Video (Plays on Hover) */}

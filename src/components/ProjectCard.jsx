@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
                         <ArrowUpRight className="text-gray-500 opacity-50" size={20} />
                     </div>
                     <p className="text-xs text-cyan-400 uppercase tracking-wider mb-3 font-medium bg-cyan-400/10 inline-block px-2 py-1 rounded-md">{project.company}</p>
-                    <p className="text-sm text-gray-300/80 line-clamp-3 leading-relaxed">{project.description}</p>
+                    <p className="text-sm text-gray-300/80 leading-relaxed">{project.description}</p>
                 </div>
                 <div className="flex gap-2 mt-4 flex-wrap">
                     {project.tags && project.tags.map(tag => (
